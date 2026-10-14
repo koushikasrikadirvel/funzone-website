@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>FunZone — 4 Bright Mini Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+<header><div class="wrap bar">
+  <div class="logo">🎮 <span>FunZone</span></div>
+  <a class="hof-link" href="#hof">🏆 Best scores</a>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Pick a game. <em>Beat your best!</em></h1>
+    <p>Four quick, colorful games you can play right now.</p>
+  </section>
+
+  <div class="picker" role="tablist" aria-label="Choose a game">
+    <button class="gcard c-mem active" data-game="memory"><span class="ic">🧠</span><h3>Memory Match</h3><small>Find the pairs</small></button>
+    <button class="gcard c-tap" data-game="tap"><span class="ic">🐹</span><h3>Tap Attack</h3><small>Whack fast!</small></button>
+    <button class="gcard c-ttt" data-game="ttt"><span class="ic">❌⭕</span><h3>Tic-Tac-Toe</h3><small>Beat the CPU</small></button>
+    <button class="gcard c-math" data-game="math"><span class="ic">➕</span><h3>Quick Math</h3><small>30-second rush</small></button>
+  </div>
+
+  <section class="stage" id="stage">
+
+    <div class="panel" id="p-memory">
+      <div class="ph"><h2>🧠 Memory Match</h2><p>Flip two cards at a time. Find all 8 pairs in the fewest moves.</p></div>
+      <div class="stats"><span class="chip">Moves <b id="memMoves">0</b></span><span class="chip">Time <b id="memTime">0s</b></span><span class="chip">Best <b id="memBest">–</b></span></div>
+      <div class="play"><div class="mem-grid" id="memGrid"></div></div>
+      <p class="msg" id="memMsg"></p>
+      <button class="pbtn" id="memBtn">New game</button>
+    </div>
+
+    <div class="panel" id="p-tap" hidden>
+      <div class="ph"><h2>🐹 Tap Attack</h2><p>Tap the critters as they pop up. 🐹 +1 · 🌟 +3 · 💣 −2. You have 30 seconds!</p></div>
+      <div class="stats"><span class="chip">Score <b id="tapScore">0</b></span><span class="chip">Time <b id="tapTime">30</b></span><span class="chip">Best <b id="tapBest">–</b></span></div>
+      <div class="play"><div class="tap-grid" id="tapGrid"></div></div>
+      <p class="msg" id="tapMsg">Press Start when you are ready!</p>
+      <button class="pbtn" id="tapBtn">Start</button>
+    </div>
+
+    <div class="panel" id="p-ttt" hidden>
+      <div class="ph"><h2>❌⭕ Tic-Tac-Toe</h2><p>You are ❌. Get three in a row before the CPU does.</p></div>
+      <div class="stats"><span class="chip">Wins <b id="tW">0</b></span><span class="chip">Losses <b id="tL">0</b></span><span class="chip">Draws <b id="tD">0</b></span><span class="chip">All-time wins <b id="tBest">0</b></span></div>
+      <div class="play"><div class="ttt-grid" id="tttGrid"></div></div>
+      <p class="msg" id="tttMsg"></p>
+      <button class="pbtn" id="tttBtn">New round</button>
+    </div>
+
+    <div class="panel" id="p-math" hidden>
+      <div class="ph"><h2>➕ Quick Math</h2><p>Answer as many as you can in 30 seconds. Every 5 in a row adds 3 bonus seconds!</p></div>
+      <div class="stats"><span class="chip">Score <b id="mathScore">0</b></span><span class="chip">Streak <b id="mathStreak">0</b></span><span class="chip">Time <b id="mathTime">30</b></span><span class="chip">Best <b id="mathBest">–</b></span></div>
+      <div class="play"><div class="math-wrap"><div class="q-box" id="mathQ">Ready?</div><div class="opts" id="mathOpts"></div></div></div>
+      <p class="msg" id="mathMsg">Press Start to begin!</p>
+      <button class="pbtn" id="mathBtn">Start</button>
+    </div>
+
+  </section>
+
+  <section class="hof" id="hof">
+    <h2>🏆 Your best scores</h2>
+    <div class="hof-grid">
+      <div class="hof-item c-mem"><div class="n" id="hMem">–</div><small>Memory · fewest moves</small></div>
+      <div class="hof-item c-tap"><div class="n" id="hTap">–</div><small>Tap Attack · top score</small></div>
+      <div class="hof-item c-ttt"><div class="n" id="hTtt">0</div><small>Tic-Tac-Toe · wins</small></div>
+      <div class="hof-item c-math"><div class="n" id="hMath">–</div><small>Quick Math · top score</small></div>
+    </div>
+  </section>
+</main>
+<footer>Made for fun · Scores are saved in this browser only</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
